@@ -23,3 +23,6 @@ if (person.role[0] === Role.ADMIN) {
 else {
     console.log("is not admin");
 }
+/**
+ * Any type: Any type of value is most flexible type
+ */
