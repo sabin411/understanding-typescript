@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Enum: Enumerated global constant identifiers
  */
@@ -10,7 +11,7 @@ var Role;
 /**
  * Tuples: Fixed length and fixed type array
  */
-var person = {
+const person = {
     name: "Maximilian",
     age: 30,
     hobbies: ["Sports", "Cooking"],
