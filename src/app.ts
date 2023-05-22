@@ -41,4 +41,3 @@ function add(a: Combinable, b: Combinable) {
 
 const result = add("Max", " Schwarz");
 result.split(" ");
-const result2 = add(1, 2);

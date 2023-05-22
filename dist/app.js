@@ -4,3 +4,12 @@ const e1 = {
     privileges: ["create-server"],
     startDate: new Date(),
 };
+function add(a, b) {
+    // type guard
+    if (typeof a === "string" || typeof b === "string") {
+        return a.toString() + b.toString();
+    }
+    return a + b;
+}
+const result = add("Max", " Schwarz");
+result.split(" ");
