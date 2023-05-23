@@ -16,3 +16,8 @@ const res = extractAndConvert(
   "address"
 );
 console.log(res);
+
+/**
+ * Generic Utility/Helper Types
+ */
+// Examples are: Partial, Readonly, Record, Pick, Omit, Exclude, Extract

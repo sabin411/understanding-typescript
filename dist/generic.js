@@ -8,3 +8,7 @@ function extractAndConvert(obj, key) {
 }
 const res = extractAndConvert({ name: "Max", age: 1, address: "Banepa" }, "address");
 console.log(res);
+/**
+ * Generic Utility/Helper Types
+ */
+// Examples are: Partial, Readonly, Record, Pick, Omit, Exclude, Extract
