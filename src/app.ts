@@ -1,34 +1,43 @@
-/**
- * Enum: Enumerated global constant identifiers
- */
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
-}
-
-/**
- * Tuples: Fixed length and fixed type array
- */
-const person: {
+// intersection
+type admin = {
   name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, Role]; // Tuple
-} = {
-  name: "Maximilian",
-  age: 30,
-  hobbies: ["Sports", "Cooking"],
-  // Tuple
-  role: [2, Role.READ_ONLY],
+  privileges: string[];
 };
 
-if (person.role[0] === Role.ADMIN) {
-  console.log("is admin");
-} else {
-  console.log("is not admin");
+type employee = {
+  name: string;
+  startDate: Date;
+};
+
+type elevatedEmployee = admin & employee;
+
+const e1: elevatedEmployee = {
+  name: "Max",
+  privileges: ["create-server"],
+  startDate: new Date(),
+};
+
+/* Function overloading */
+type Combinable = string | number;
+type Numeric = number | boolean;
+
+type Universal = Combinable & Numeric;
+
+// function overload: different return type
+// for function overload we need to define the function signature
+// function name should be same here like add here and in the function below
+// function add(a: number, b: number): number;
+// function add(a: string, b: string): string;
+
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: Combinable, b: Combinable) {
+  // type guard
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+  return a + b;
 }
 
-/**
- * Any type: Any type of value is most flexible type
- */
+const result = add("Max", " Schwarz");
+result.split(" ");

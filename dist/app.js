@@ -1,29 +1,15 @@
 "use strict";
-/**
- * Enum: Enumerated global constant identifiers
- */
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-/**
- * Tuples: Fixed length and fixed type array
- */
-const person = {
-    name: "Maximilian",
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    // Tuple
-    role: [2, Role.READ_ONLY],
+const e1 = {
+    name: "Max",
+    privileges: ["create-server"],
+    startDate: new Date(),
 };
-if (person.role[0] === Role.ADMIN) {
-    console.log("is admin");
+function add(a, b) {
+    // type guard
+    if (typeof a === "string" || typeof b === "string") {
+        return a.toString() + b.toString();
+    }
+    return a + b;
 }
-else {
-    console.log("is not admin");
-}
-/**
- * Any type: Any type of value is most flexible type
- */
+const result = add("Max", " Schwarz");
+result.split(" ");
